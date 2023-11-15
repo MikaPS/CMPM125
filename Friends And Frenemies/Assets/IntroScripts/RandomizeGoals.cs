@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RandomizeGoals : MonoBehaviour
 {
-    private List<string> goalsArray = new List<string>  { "Pet a dog", "Collect 10 wood", "Destroy a building", "Talk to 3 NPCs", "End the zombie apocalypse"};
+    private static List<string> goalsArray = new List<string>  { "Pet a dog", "Collect 10 wood", "Destroy a building", "Talk to 3 NPCs", "End the zombie apocalypse"};
     public Text goalsText;
 
     // Start is called before the first frame update
@@ -26,6 +26,6 @@ public class RandomizeGoals : MonoBehaviour
    }
 
    public void setTextToGoals() {
-        goalsText.text = "\n" + getRandomGoal() + "\n" + getRandomGoal();
+        goalsText.text = "Your goals are:\n" + getRandomGoal() + "\n" + getRandomGoal();
    }
 }
