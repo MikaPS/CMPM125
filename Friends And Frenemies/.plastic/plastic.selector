@@ -1,0 +1,4 @@
+repository "Friends And Frenemies@mikaps7@cloud"
+  path "/"
+    br "/main"
+    co "/main"
