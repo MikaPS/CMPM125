@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 1042073238}
   m_Layer: 5
   m_Name: Player1Screen
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1842,7 +1842,7 @@ GameObject:
   - component: {fileID: 1775476506}
   m_Layer: 5
   m_Name: Player2Screen
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2325,6 +2325,7 @@ GameObject:
   - component: {fileID: 2000680248}
   - component: {fileID: 2000680247}
   - component: {fileID: 2000680246}
+  - component: {fileID: 2000680250}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2417,6 +2418,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2000680250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000680245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88d8d8f0675b5147b27468bc56f9ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Goals: []
+  player2Goals: []
 --- !u!1 &2004198729
 GameObject:
   m_ObjectHideFlags: 0
