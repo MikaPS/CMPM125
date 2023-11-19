@@ -9,11 +9,7 @@ public class Player1 : MonoBehaviour
     public KeyCode MoveLeft;
     public KeyCode MoveRight;
     public float speed;
-<<<<<<< Updated upstream
-    // Start is called before the first frame update
-=======
 
->>>>>>> Stashed changes
     void Start()
     {
         speed = 10f;
