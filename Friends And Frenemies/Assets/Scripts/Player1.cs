@@ -9,7 +9,7 @@ public class Player1 : MonoBehaviour
     public KeyCode MoveLeft;
     public KeyCode MoveRight;
     public float speed;
-    // Start is called before the first frame update
+
     void Start()
     {
         speed = 10f;
