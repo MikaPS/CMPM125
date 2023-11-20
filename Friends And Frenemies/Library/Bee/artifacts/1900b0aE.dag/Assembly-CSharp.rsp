@@ -335,6 +335,7 @@
 "Assets/IntroScripts/RandomizeGoals.cs"
 "Assets/Scripts/Collectable.cs"
 "Assets/Scripts/Player1.cs"
+"Assets/Scripts/Week8MikaScripts/Spawner.cs"
 -langversion:9.0
 
 /deterministic

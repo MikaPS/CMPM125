@@ -22,7 +22,6 @@ public class Collectable : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player1" || collider.gameObject.tag == "Player2")
         {
-            gameObject.SetActive(false);
             if (tag == "Stone") {
                 stoneCount += 1;
                 countText.text = "" + stoneCount;
@@ -30,10 +29,12 @@ public class Collectable : MonoBehaviour
                 woodCount += 1;
                 countText.text = "" + woodCount;
             }
+            Destroy(gameObject);
+            // Check for a win/lose
+            checkForWin();
+
         }
 
-        // Check for a win/lose
-        checkForWin();
     }
 
     public void checkForWin() {
@@ -91,5 +92,7 @@ public class Collectable : MonoBehaviour
         if (player2GoalsCompleted == 2) {
             winText.text = "PLAYER 2 WON!!";
         }
+                    
+
     }
 }
