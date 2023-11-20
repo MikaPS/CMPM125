@@ -25,14 +25,16 @@ public class Collectable : MonoBehaviour
             if (tag == "Stone") {
                 stoneCount += 1;
                 countText.text = "" + stoneCount;
-            } else {
+            } else if (tag == "Apple") {
+                FoodBar.foodManager.UpdateFood(5);
+            }
+             else {
                 woodCount += 1;
                 countText.text = "" + woodCount;
             }
             Destroy(gameObject);
             // Check for a win/lose
-            checkForWin();
-
+            // checkForWin();
         }
 
     }
@@ -92,7 +94,5 @@ public class Collectable : MonoBehaviour
         if (player2GoalsCompleted == 2) {
             winText.text = "PLAYER 2 WON!!";
         }
-                    
-
     }
 }

@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     private float totalSpawn = 0;
     private float maxAttempts = 20; // max number of attempts to find a position to spawn
     public float scalingPercentage = 100f;
+    public int minProb = 1;
+    public int maxProb = 3;
 
 
     void start() {
@@ -21,7 +23,7 @@ public class Spawner : MonoBehaviour
     {
         if (Time.time - lastSpawnTime > spawnCooldown)
         {
-            numberOfObjectsToSpawn = Random.Range(1, 3);
+            numberOfObjectsToSpawn = Random.Range(minProb, maxProb);
             totalSpawn += numberOfObjectsToSpawn;
             if (duration <= totalSpawn) {
                 Destroy(gameObject);
