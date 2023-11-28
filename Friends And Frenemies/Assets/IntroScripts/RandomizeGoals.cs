@@ -6,8 +6,14 @@ using UnityEngine.UI;
 public class RandomizeGoals : MonoBehaviour
 {
     //private static List<string> goalsArray = new List<string>  { "Pet a dog", "Collect 10 wood", "Destroy a building", "Talk to 3 NPCs", "End the zombie apocalypse"};
-    private static List<string> goalsArray = new List<string> { "2 Wood", "3 Wood", "1 Stone", "5 Stone", "3 Stone"};
-
+    private static List<Goal> goalsArray = new List<Goal>
+    {
+        new Goal(2, "Wood"),
+        new Goal(3, "Wood"),
+        new Goal(1, "Stone"),
+        new Goal(5, "Stone"),
+        new Goal(3, "Stone")
+    };
     public Text goalsText;
 
 
@@ -15,20 +21,17 @@ public class RandomizeGoals : MonoBehaviour
    public string getRandomGoal() {
     if (goalsArray.Count > 0) {
         int i = Random.Range(0, goalsArray.Count);
-        string goal = goalsArray[i];
+        Goal goal = goalsArray[i];
         goalsArray.RemoveAt(i);
-        string[] words = goal.Split(' ');
-
-        foreach (string word in words) {
-            if (tag == "Player1") { 
-                GoalsManager.GoalManager.player1Goals.Add(word);
-            }
-            else if (tag == "Player2") {
-                GoalsManager.GoalManager.player2Goals.Add(word);
-            }
+        
+        if (tag == "Player1") { 
+            GoalsManager.GoalManager.player1Goals.Add(goal);
+        }
+        else if (tag == "Player2") {
+            GoalsManager.GoalManager.player2Goals.Add(goal);
         }
        
-        return goal;
+        return $"{goal.targetValue} {goal.type}";
     }
     return "";
    }
