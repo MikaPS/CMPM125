@@ -1,3 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 47px; width: 238px; white-space: nowrap; -unity-text-align: upper-center;" />
-</ui:UXML>
