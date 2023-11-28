@@ -10,6 +10,11 @@ public class Collectable : MonoBehaviour
 
     private static int woodCount = 0; // Static since all wood objects have the script
     private static int stoneCount = 0; // Static since all wood objects have the script
+
+    public int player1GoalsCompleted = 0;
+    public int player2GoalsCompleted = 0;
+
+  
     public void Start()
     {
 
