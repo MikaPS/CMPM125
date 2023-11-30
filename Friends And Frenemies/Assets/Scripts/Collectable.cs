@@ -14,6 +14,7 @@ public class Collectable : MonoBehaviour
     public int player1GoalsCompleted = 0;
     public int player2GoalsCompleted = 0;
 
+    public InventoryManager inv;
   
     public void Start()
     {

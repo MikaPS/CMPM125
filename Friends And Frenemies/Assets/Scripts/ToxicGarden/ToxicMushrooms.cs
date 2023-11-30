@@ -9,7 +9,6 @@ public class ToxicMushrooms : MonoBehaviour
     public float windChangeTime = 3f;
     public int dmg = 4;
     private float timeSinceLastChange;
-    public GameObject collisionContainer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,20 +23,16 @@ public class ToxicMushrooms : MonoBehaviour
         {
             particles.Play();
         }
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
-        collisionContainer.transform.rotation = Quaternion.identity;
-
+        particles.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
     }
 
     void OnParticleCollision(GameObject other)
 
     {
-                    Debug.Log("taking damage :(");
-
-        // if (collider.CompareTag("Player1") || collider.CompareTag("Player2"))
-        // {
-        //     Debug.Log("taking damage :(");
-        //     // Reduce player's health
-        // }
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        {
+            Debug.Log("taking damage :(");
+            // Reduce player's health
+        }
     }
 }
