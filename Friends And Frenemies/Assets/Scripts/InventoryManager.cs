@@ -4,13 +4,30 @@ using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager inventoryManager;
+
+    void Awake()
+    {
+        if (inventoryManager == null)
+        {
+            inventoryManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public enum ResourceType
     {
         Wood,
         Stone,
         Water,
         Food,
-        RawFood
+        RawFood,
+        ToxicMushroom,
+        RedFlower,
+        MovingThorneBush,
     }
 
     [System.Serializable]
