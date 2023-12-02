@@ -10,6 +10,8 @@ public class Player1 : MonoBehaviour
     public KeyCode MoveRight;
     public float speed;
 
+    public KeyCode Attack;
+
     void Start()
     {
         speed = 10f;
@@ -29,6 +31,10 @@ public class Player1 : MonoBehaviour
         }
         if(Input.GetKey(MoveRight)){
             transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(Attack)){
+            Debug.Log("Attack");
         }
     }
 }
