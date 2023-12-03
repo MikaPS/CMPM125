@@ -6,9 +6,9 @@ using System;
 public struct Goal
 {
     public int targetValue;
-    public InventoryManager.ResourceType type;
+    public string type;
 
-    public Goal(int targetValue, InventoryManager.ResourceType type)
+    public Goal(int targetValue, string type)
     {
         this.targetValue = targetValue;
         this.type = type;
@@ -43,27 +43,18 @@ public class GoalsManager : MonoBehaviour
     {
         
     }
-
-    public int CheckPlayerGoals(List<Goal> playerGoals)
+    
+    public int CheckPlayerGoals(List<Goal> playerGoals, int stoneCount, int woodCount)
     {
         int playerGoalsCompleted = 0;
         for (int i = 0; i < playerGoals.Count; i += 1)
         {
-            InventoryManager.ResourceType resourceType = playerGoals[i].type;
+            string resourceType = playerGoals[i].type;
             int targetAmount = playerGoals[i].targetValue;
-            // List<InventoryManager.Resource> resources = new List<InventoryManager.Resource>();
-            // resources = InventoryManager.resources;
-            // List<InventoryManager.Resource> resources = InventoryManager.inventoryManager.resources;
-            foreach (InventoryManager.Resource resource in InventoryManager.resources) {
-                if (resourceType == resource.type && resource.amount >= targetAmount) {
-                    playerGoalsCompleted += 1;
-                }
+            if ((resourceType == "Stone" && stoneCount >= targetAmount) || (resourceType == "Wood" && woodCount >= targetAmount))
+            {
+                playerGoalsCompleted += 1;
             }
-
-            // if ((resourceType == "Stone" && stoneCount >= targetAmount) || (resourceType == "Wood" && woodCount >= targetAmount))
-            // {
-            //     playerGoalsCompleted += 1;
-            // }
         }
         return playerGoalsCompleted;
     }

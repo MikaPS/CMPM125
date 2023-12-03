@@ -8,16 +8,11 @@ public class RandomizeGoals : MonoBehaviour
     //private static List<string> goalsArray = new List<string>  { "Pet a dog", "Collect 10 wood", "Destroy a building", "Talk to 3 NPCs", "End the zombie apocalypse"};
     private static List<Goal> goalsArray = new List<Goal>
     {
-        new Goal(2, InventoryManager.ResourceType.Wood),
-        new Goal(3, InventoryManager.ResourceType.Wood),
-        new Goal(1, InventoryManager.ResourceType.Stone),
-        new Goal(5, InventoryManager.ResourceType.Stone),
-        new Goal(3, InventoryManager.ResourceType.Stone),
-        new Goal(4, InventoryManager.ResourceType.ToxicMushroom),
-        new Goal(8, InventoryManager.ResourceType.RedFlower),
-        new Goal(3, InventoryManager.ResourceType.MovingThorneBush),
-        new Goal(5, InventoryManager.ResourceType.badWater),
-        new Goal(2, InventoryManager.ResourceType.cleanWater),
+        new Goal(2, "Wood"),
+        new Goal(3, "Wood"),
+        new Goal(1, "Stone"),
+        new Goal(5, "Stone"),
+        new Goal(3, "Stone")
     };
     public Text goalsText;
 
