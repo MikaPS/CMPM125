@@ -17,7 +17,6 @@ public class AddFlowerToInv : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("here");
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2")) {
             InventoryManager.ResourceType objectToAdd = InventoryManager.ResourceType.MovingThorneBush;
             if (tag == "RedFlower") {  objectToAdd = InventoryManager.ResourceType.RedFlower;}
