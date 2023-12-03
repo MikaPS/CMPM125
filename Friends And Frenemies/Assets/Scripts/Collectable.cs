@@ -13,8 +13,6 @@ public class Collectable : MonoBehaviour
 
     public int player1GoalsCompleted = 0;
     public int player2GoalsCompleted = 0;
-
-    public InventoryManager inv;
   
     public void Start()
     {
@@ -28,20 +26,24 @@ public class Collectable : MonoBehaviour
             if (tag == "Stone") {
                 stoneCount += 1;
                 countText.text = "" + stoneCount;
+                InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.Stone, 1);
+                InventoryManager.inventoryManager.PrintInventory();
 
             } else if (tag == "Apple") {
                 FoodBar.foodManager.UpdateFood(5);
             }
              else {
+                InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.Wood, 1);
+                InventoryManager.inventoryManager.PrintInventory();
                 woodCount += 1;
                 countText.text = "" + woodCount;
             }
             Destroy(gameObject);
 
-            if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals, stoneCount, woodCount) == 2) {
+            if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals) == 2) {
             winText.text = "PLAYER 1 WON!!";
             }
-            if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals, stoneCount, woodCount) == 2) {
+            if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals) == 2) {
                 winText.text = "PLAYER 2 WON!!";
             }
         }

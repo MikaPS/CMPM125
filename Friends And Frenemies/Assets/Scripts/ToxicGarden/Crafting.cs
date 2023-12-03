@@ -5,12 +5,26 @@ using UnityEngine.UI;
 
 public class Crafting : MonoBehaviour
 {
+    public static Crafting craftingManager;
+
     private int currentSelect = -1; // 0=right, 1=left
     public Button rightItem;
     public Button leftItem;
     public Sprite sprite;
 
-
+    void Awake()
+    {
+        // gameObject.SetActive(!gameObject.activeSelf);
+        if (craftingManager == null)
+        {
+            craftingManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

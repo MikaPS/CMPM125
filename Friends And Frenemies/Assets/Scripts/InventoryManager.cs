@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventoryManager;
     public Text[] texts;
-    // public Text text;
+    public Text winText;
 
     void Awake()
     {
@@ -38,7 +38,7 @@ public class InventoryManager : MonoBehaviour
         darkestWater,
     }
 
-    [System.Serializable]
+    // [System.Serializable]
     public class Resource
     {
         public ResourceType type;
@@ -52,7 +52,6 @@ public class InventoryManager : MonoBehaviour
         {
             Resource existingResource = new Resource { type = r, amount = 0 };
             resources.Add(existingResource);
-            Debug.Log(resources);
         }
     }
 
@@ -94,14 +93,23 @@ public class InventoryManager : MonoBehaviour
 
     public void PrintInventory()
     {
+        
         int count = 0;
         foreach (Resource resource in resources)
         {
-            if (count > 4) {
-                texts[count-5].text = "x " + resource.amount;
+            if (texts.Length > 0) {
+                if (count > 4) {
+                    texts[count-5].text = "x " + resource.amount;
+                }
             }
             count += 1;
             // Debug.Log(resource.type + ": " + resource.amount);
+        }
+        if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals) == 2) {
+            winText.text = "PLAYER 1 WON!!";
+            }
+        if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals) == 2) {
+            winText.text = "PLAYER 2 WON!!";
         }
     }
 
@@ -116,5 +124,10 @@ public class InventoryManager : MonoBehaviour
     public void useResource(ResourceType t) {
         Resource existingResource = resources.Find(r => r.type == t);
         existingResource.amount -= 1;
+    }
+
+    public int numOfResource(ResourceType t) {
+        Resource existingResource = resources.Find(r => r.type == t);
+        return existingResource.amount;
     }
 }
