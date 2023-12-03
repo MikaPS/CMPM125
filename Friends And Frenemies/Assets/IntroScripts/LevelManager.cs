@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private int totalScenes = 2; // start counting from 0
+    private int totalScenes = 1; // start counting from 0
     // Moves to next scene
     public void NextScene() {
         if (SceneManager.GetActiveScene().buildIndex < totalScenes) {

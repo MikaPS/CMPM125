@@ -1,14 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using System;
 
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventoryManager;
-    public Text[] texts;
-    public Text winText;
 
     void Awake()
     {
@@ -29,31 +25,19 @@ public class InventoryManager : MonoBehaviour
         Water,
         Food,
         RawFood,
-        MovingThorneBush,
         ToxicMushroom,
         RedFlower,
-        badWater,
-        cleanWater,
-        medWater,
-        darkestWater,
+        MovingThorneBush,
     }
 
-    // [System.Serializable]
+    [System.Serializable]
     public class Resource
     {
         public ResourceType type;
         public int amount;
     }
 
-    public static List<Resource> resources = new List<Resource>();
-
-    void Start() {
-        foreach (ResourceType r in Enum.GetValues(typeof(ResourceType)))
-        {
-            Resource existingResource = new Resource { type = r, amount = 0 };
-            resources.Add(existingResource);
-        }
-    }
+    public List<Resource> resources = new List<Resource>();
 
     public void AddResource(ResourceType type, int amount)
     {
@@ -93,41 +77,13 @@ public class InventoryManager : MonoBehaviour
 
     public void PrintInventory()
     {
-        
-        int count = 0;
         foreach (Resource resource in resources)
         {
-            if (texts.Length > 0) {
-                if (count > 4) {
-                    texts[count-5].text = "x " + resource.amount;
-                }
-            }
-            count += 1;
-            // Debug.Log(resource.type + ": " + resource.amount);
-        }
-        if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals) == 2) {
-            winText.text = "PLAYER 1 WON!!";
-            }
-        if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals) == 2) {
-            winText.text = "PLAYER 2 WON!!";
+            Debug.Log(resource.type + ": " + resource.amount);
         }
     }
 
-    public bool hasResource(ResourceType t) {
-        Resource existingResource = resources.Find(r => r.type == t);
-        if (existingResource.amount > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    public void useResource(ResourceType t) {
-        Resource existingResource = resources.Find(r => r.type == t);
-        existingResource.amount -= 1;
-    }
-
-    public int numOfResource(ResourceType t) {
-        Resource existingResource = resources.Find(r => r.type == t);
-        return existingResource.amount;
+    void Start()
+    {
     }
 }
