@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System;
 
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventoryManager;
+    public Text[] texts;
+    // public Text text;
 
     void Awake()
     {
@@ -25,9 +29,13 @@ public class InventoryManager : MonoBehaviour
         Water,
         Food,
         RawFood,
+        MovingThorneBush,
         ToxicMushroom,
         RedFlower,
-        MovingThorneBush,
+        badWater,
+        cleanWater,
+        medWater,
+        darkestWater,
     }
 
     [System.Serializable]
@@ -37,7 +45,16 @@ public class InventoryManager : MonoBehaviour
         public int amount;
     }
 
-    public List<Resource> resources = new List<Resource>();
+    public static List<Resource> resources = new List<Resource>();
+
+    void Start() {
+        foreach (ResourceType r in Enum.GetValues(typeof(ResourceType)))
+        {
+            Resource existingResource = new Resource { type = r, amount = 0 };
+            resources.Add(existingResource);
+            Debug.Log(resources);
+        }
+    }
 
     public void AddResource(ResourceType type, int amount)
     {
@@ -77,13 +94,27 @@ public class InventoryManager : MonoBehaviour
 
     public void PrintInventory()
     {
+        int count = 0;
         foreach (Resource resource in resources)
         {
-            Debug.Log(resource.type + ": " + resource.amount);
+            if (count > 4) {
+                texts[count-5].text = "x " + resource.amount;
+            }
+            count += 1;
+            // Debug.Log(resource.type + ": " + resource.amount);
         }
     }
 
-    void Start()
-    {
+    public bool hasResource(ResourceType t) {
+        Resource existingResource = resources.Find(r => r.type == t);
+        if (existingResource.amount > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void useResource(ResourceType t) {
+        Resource existingResource = resources.Find(r => r.type == t);
+        existingResource.amount -= 1;
     }
 }
