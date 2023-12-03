@@ -20,6 +20,7 @@ public class HealthManager : MonoBehaviour
         if(healthAmount <= 0)
         {
             Debug.Log("Game Over");
+            //Bring everything back man
         }
 
         if(Input.GetKeyDown(KeyCode.T))
