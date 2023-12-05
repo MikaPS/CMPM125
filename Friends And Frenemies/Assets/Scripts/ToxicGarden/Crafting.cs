@@ -7,9 +7,10 @@ public class Crafting : MonoBehaviour
 {
     public static Crafting craftingManager;
 
-    private int currentSelect = -1; // 0=right, 1=left
+    private int currentSelect = -1; // 0=right, 1=left, 2=eat
     public Button rightItem;
     public Button leftItem;
+    public Button eatItem;
     public Sprite sprite;
 
     void Awake()
@@ -49,6 +50,8 @@ public class Crafting : MonoBehaviour
             rightItem.image.sprite = sprite;
         } else if (currentSelect == 1) {
             leftItem.image.sprite = sprite;
+        } else if (currentSelect == 2) {
+            eatItem.image.sprite = sprite;
         }
     }
 
@@ -84,6 +87,59 @@ public class Crafting : MonoBehaviour
                 InventoryManager.inventoryManager.PrintInventory();
             }
         } 
+    }
+
+    public void eat() {
+        string food = eatItem.image.sprite.name;
+        if (food == "apple") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.Apple)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.Apple);
+                FoodBar.foodManager.UpdateFood(5);
+            }
+        }
+        else if (food == "redflower") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.RedFlower)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.RedFlower);
+                FoodBar.foodManager.UpdateFood(7);
+            }
+        }
+        else if (food == "yellowflower") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.ToxicMushroom)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.ToxicMushroom);
+                FoodBar.foodManager.UpdateFood(-2);
+            }
+        }
+        else if (food == "purpleflower") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.MovingThorneBush)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.MovingThorneBush);
+                FoodBar.foodManager.UpdateFood(3);
+            }
+        }
+        else if (food == "gray") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.badWater)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.badWater);
+                FoodBar.foodManager.UpdateFood(-10);
+            }
+        }
+        else if (food == "brightblue") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.cleanWater)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.cleanWater);
+                FoodBar.foodManager.UpdateFood(5);
+            }
+        }
+        else if (food == "darkblue") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.darkestWater)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.darkestWater);
+                FoodBar.foodManager.UpdateFood(5);
+            }
+        }
+        else if (food == "bluegray") {
+            if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.medWater)) {
+                InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.medWater);
+                FoodBar.foodManager.UpdateFood(-3);
+            }
+        }
+        InventoryManager.inventoryManager.PrintInventory();
     }
 
     private bool hasItems(string left, string right) {

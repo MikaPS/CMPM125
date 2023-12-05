@@ -26,9 +26,7 @@ public class InventoryManager : MonoBehaviour
     {
         Wood,
         Stone,
-        Water,
-        Food,
-        RawFood,
+        Apple,
         MovingThorneBush,
         ToxicMushroom,
         RedFlower,
@@ -36,6 +34,7 @@ public class InventoryManager : MonoBehaviour
         cleanWater,
         medWater,
         darkestWater,
+        
     }
 
     // [System.Serializable]
@@ -93,17 +92,13 @@ public class InventoryManager : MonoBehaviour
 
     public void PrintInventory()
     {
-        
         int count = 0;
         foreach (Resource resource in resources)
         {
             if (texts.Length > 0) {
-                if (count > 4) {
-                    texts[count-5].text = "x " + resource.amount;
-                }
+                texts[count].text = "x " + resource.amount;
             }
             count += 1;
-            // Debug.Log(resource.type + ": " + resource.amount);
         }
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals) == 2) {
             winText.text = "PLAYER 1 WON!!";
@@ -111,6 +106,7 @@ public class InventoryManager : MonoBehaviour
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals) == 2) {
             winText.text = "PLAYER 2 WON!!";
         }
+        
     }
 
     public bool hasResource(ResourceType t) {

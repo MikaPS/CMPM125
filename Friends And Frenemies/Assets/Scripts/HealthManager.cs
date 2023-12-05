@@ -28,7 +28,7 @@ public class HealthManager : MonoBehaviour
             healthBar.fillAmount = healthAmount /100f;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Y))
         {
             healthAmount += 5;
             healthAmount = Mathf.Clamp(healthAmount, 0, 100);
