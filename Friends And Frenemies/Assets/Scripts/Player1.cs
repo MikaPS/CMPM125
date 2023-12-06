@@ -10,11 +10,14 @@ public class Player1 : MonoBehaviour
     public KeyCode MoveRight;
     public float speed;
     public KeyCode Attack;
+    public bool attack;
 
+    public EnemyHealth eH;
 
     void Start()
     {
         speed = 10f;
+        attack = false;
     }
 
     // Update is called once per frame
@@ -32,9 +35,23 @@ public class Player1 : MonoBehaviour
         if(Input.GetKey(MoveRight)){
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-        //if(Input.GetKey(Attack)){
-        //    Debug.Log("Attack");
-        //}
+        if(Input.GetKeyDown(Attack)){
+            attack = true;
+        }
+        
 
+    }
+
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "enemy" && attack)
+        //if(collision.gameObject.name == "pinksquare")
+        {
+            Debug.Log("Enemy gonna get attacked homie");
+            eH.enemyHealth -= 1;
+            Debug.Log("Health of enemy:");
+            Debug.Log(eH.enemyHealth);
+
+        }
     }
 }

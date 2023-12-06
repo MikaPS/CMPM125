@@ -39,8 +39,8 @@ public class EnemyFollower : MonoBehaviour
         //if(collision.gameObject.name == "pinksquare")
         {
             playerHealth -= 5;
-            Debug.Log("This is the player's health");
-            Debug.Log(playerHealth);
+            //Debug.Log("This is the player's health");
+            //Debug.Log(playerHealth);
         }
     }
 }

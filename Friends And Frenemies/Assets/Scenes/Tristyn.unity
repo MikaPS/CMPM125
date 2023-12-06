@@ -1397,6 +1397,8 @@ MonoBehaviour:
   MoveRight: 100
   speed: 0
   Attack: 101
+  attack: 0
+  eH: {fileID: 1949153069}
 --- !u!50 &136833428
 Rigidbody2D:
   serializedVersion: 4
@@ -6220,6 +6222,8 @@ MonoBehaviour:
   MoveRight: 275
   speed: 0
   Attack: 303
+  attack: 0
+  eH: {fileID: 0}
 --- !u!50 &1602556530
 Rigidbody2D:
   serializedVersion: 4
@@ -7297,9 +7301,10 @@ GameObject:
   - component: {fileID: 1949153066}
   - component: {fileID: 1949153067}
   - component: {fileID: 1949153068}
+  - component: {fileID: 1949153069}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7448,6 +7453,21 @@ MonoBehaviour:
   player: {fileID: 1602556527}
   speed: 3
   distanceBetween: 10
+--- !u!114 &1949153069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949153062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2c394471e514c33abf469a7a3ec814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 10
+  currentHealth: {fileID: 136833427}
+  enemy: {fileID: 1949153062}
 --- !u!1 &1967858494
 GameObject:
   m_ObjectHideFlags: 0
