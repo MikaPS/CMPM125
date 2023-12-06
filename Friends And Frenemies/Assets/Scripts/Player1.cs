@@ -13,6 +13,7 @@ public class Player1 : MonoBehaviour
     public bool attack;
 
     public EnemyHealth eH;
+    public RabbitHealth rH;
 
     void Start()
     {
@@ -52,6 +53,13 @@ public class Player1 : MonoBehaviour
             Debug.Log("Health of enemy:");
             Debug.Log(eH.enemyHealth);
 
+        }
+
+        if(collision.gameObject.name == "rabbit" && attack)
+        {
+            rH.rabbitHealth -= 1;
+            Debug.Log("Attacking rabbit");
+            //Rabbit health go down
         }
     }
 }
