@@ -374,6 +374,7 @@
 "Assets/Scripts/ToxicGarden/MovingThornBush1.cs"
 "Assets/Scripts/ToxicGarden/MovingThorneBush.cs"
 "Assets/Scripts/ToxicGarden/OpenCrafting.cs"
+"Assets/Scripts/ToxicGarden/TextNextToPlayer.cs"
 "Assets/Scripts/ToxicGarden/ToxicMushrooms.cs"
 "Assets/Scripts/Week8MikaScripts/FoodBar.cs"
 "Assets/Scripts/Week8MikaScripts/Spawner.cs"
