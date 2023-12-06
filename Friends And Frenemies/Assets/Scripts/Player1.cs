@@ -32,9 +32,9 @@ public class Player1 : MonoBehaviour
         if(Input.GetKey(MoveRight)){
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-        if(Input.GetKey(Attack)){
-            Debug.Log("Attack");
-        }
+        //if(Input.GetKey(Attack)){
+        //    Debug.Log("Attack");
+        //}
 
     }
 }
