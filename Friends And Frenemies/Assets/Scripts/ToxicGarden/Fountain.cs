@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Fountain : MonoBehaviour
 {
+    public Sprite speedUp;
+    public Sprite speedDown;
+    public Sprite healthDown;
+    public Sprite waterUp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +25,26 @@ public class Fountain : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
         {
+            string currentPlayer = collision.gameObject.tag;
+
             Player1 players = collision.gameObject.GetComponent<Player1>();
             int rand = Random.Range(1, 6);
-
             if (rand == 1) {
+                TextNextToPlayer.textEffects.updateSprite(currentPlayer, speedUp);
                 players.speed += 2;
             }
             else if (rand == 2) {
-                players.speed -= 2;
+                if (players.speed >= 5) {
+                    TextNextToPlayer.textEffects.updateSprite(currentPlayer, speedDown);
+                    players.speed -= 2;
+                }
             } 
             else if (rand == 3) {
-                // reduce food
+                TextNextToPlayer.textEffects.updateSprite(currentPlayer, healthDown);
+                // reduce health
             } 
             else {
+                TextNextToPlayer.textEffects.updateSprite(currentPlayer, waterUp);
                 InventoryManager.ResourceType objectToAdd = InventoryManager.ResourceType.badWater;
                 InventoryManager.inventoryManager.AddResource(objectToAdd, 1);
                 InventoryManager.inventoryManager.PrintInventory();

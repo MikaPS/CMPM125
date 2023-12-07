@@ -113,6 +113,7 @@ public class Crafting : MonoBehaviour
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.MovingThorneBush)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.MovingThorneBush);
                 FoodBar.foodManager.UpdateFood(3);
+                // also increase health
             }
         }
         else if (food == "gray") {
@@ -150,6 +151,10 @@ public class Crafting : MonoBehaviour
     }
 
     public void closeWindow() {
+        gameObject.SetActive(false);
+    }
+
+    public void toggleVisibility() {
         gameObject.SetActive(!gameObject.activeSelf);
     }
 }

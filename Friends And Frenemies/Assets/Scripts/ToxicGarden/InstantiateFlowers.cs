@@ -6,10 +6,10 @@ public class InstantiateFlowers : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public int numberOfObjects = 10;
-    public float xMinRange = -75;
-    public float xMaxRange = 75;
+    public float xMinRange = -50;
+    public float xMaxRange = 60;
     public float yMinRange = -40;
-    public float yMaxRange = 40;
+    public float yMaxRange = 25;
     private float maxAttempts = 20; // max number of attempts to find a position to spawn
 
     void Start()
@@ -19,6 +19,7 @@ public class InstantiateFlowers : MonoBehaviour
 
     void SpawnObjects()
     {
+        // Debug.Log("xmin: " + xMinRange + " xmax: " + xMaxRange  + " ymin: " + yMinRange  + " ymax: " +  yMaxRange);
         for (int i = 0; i < numberOfObjects; i++)
         {
             spawn();

@@ -15,7 +15,7 @@ public class KeyboardControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Crafting.craftingManager.closeWindow();
+            Crafting.craftingManager.toggleVisibility();
         }
     }
 }
