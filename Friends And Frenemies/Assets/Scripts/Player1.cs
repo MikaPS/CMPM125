@@ -12,13 +12,16 @@ public class Player1 : MonoBehaviour
     public KeyCode Attack;
     public bool attack;
 
-    public EnemyHealth eH;
+    //public EnemyHealth eH;
     public RabbitHealth rH;
+    public bool hurt;
+    public ParticleSystem blood;
 
     void Start()
     {
         speed = 10f;
         attack = false;
+        hurt = false;
     }
 
     // Update is called once per frame
@@ -38,28 +41,41 @@ public class Player1 : MonoBehaviour
         }
         if(Input.GetKeyDown(Attack)){
             attack = true;
+        
         }
         
 
     }
 
-     private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "enemy" && attack)
-        //if(collision.gameObject.name == "pinksquare")
-        {
-            Debug.Log("Enemy gonna get attacked homie");
-            eH.enemyHealth -= 1;
-            Debug.Log("Health of enemy:");
-            Debug.Log(eH.enemyHealth);
-
-        }
-
         if(collision.gameObject.name == "rabbit" && attack)
         {
+            //if(rH.rabbitHealth != 0){
             rH.rabbitHealth -= 1;
+            blood.Play();
             Debug.Log("Attacking rabbit");
+            //}
             //Rabbit health go down
         }
+        //if(collision.gameObject.name == "enemy" && attack)
+        //if(collision.gameObject.name == "pinksquare")
+        //{
+        //    Debug.Log("Enemy gonna get attacked homie");
+        //    eH.enemyHealth -= 1;
+        //    Debug.Log("Health of enemy:");
+        //    Debug.Log(eH.enemyHealth);
+       // }
+
+        //if(collision.gameObject.name == "enemy1" && attack)
+        //if(collision.gameObject.name == "pinksquare")
+        //{
+        //    Debug.Log("Enemy gonna get attacked homie");
+         //   eH.enemyHealth -= 1;
+         //   Debug.Log("Health of enemy:");
+          //  Debug.Log(eH.enemyHealth);
+        //}
+
+        
     }
 }

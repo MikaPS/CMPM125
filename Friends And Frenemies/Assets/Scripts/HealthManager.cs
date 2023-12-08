@@ -7,7 +7,22 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
-    public EnemyFollower healthAmount;
+    public PlayerHealth pH;
+    public static HealthManager healthManager;
+
+     void Awake()
+    {
+        if (healthManager == null)
+        {
+            healthManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    //public EnemyFollower healthAmount;
     //public float healthAmount = 100f;
     // Start is called before the first frame update
     void Start()
@@ -18,15 +33,21 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthAmount.playerHealth <= 0)
-        {
-            Debug.Log("Game Over");
-        }
+        //if(healthAmount.playerHealth <= 0)
+        //{
+        //    Debug.Log("Game Over");
+        //}
 
         //if(Input.GetKeyDown(KeyCode.T))
         //{
         //    healthAmount -= 5;
-        healthBar.fillAmount = healthAmount.playerHealth /100f;
+        
+        
+        healthBar.fillAmount = pH.health /100f;
+        
+        
+        
+        
         //}
 
         /*if(Input.GetKeyDown(KeyCode.Y))
