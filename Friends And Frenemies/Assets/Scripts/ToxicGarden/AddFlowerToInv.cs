@@ -21,10 +21,11 @@ public class AddFlowerToInv : MonoBehaviour
             InventoryManager.ResourceType objectToAdd = InventoryManager.ResourceType.MovingThorneBush;
             if (tag == "RedFlower") {  objectToAdd = InventoryManager.ResourceType.RedFlower;}
             else if (tag == "ToxicMushroom") {  objectToAdd = InventoryManager.ResourceType.ToxicMushroom;}
-
+            SoundEffects.AudioManager.playPickUp();
             InventoryManager.inventoryManager.AddResource(objectToAdd, 1);
             InventoryManager.inventoryManager.PrintInventory();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
     }
 }

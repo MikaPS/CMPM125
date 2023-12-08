@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    /*public int enemyHealth;
+    public int enemyHealth;
     public Player1 currentHealth;
     public GameObject enemy;
     // Start is called before the first frame update
@@ -19,5 +19,5 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth.eH.enemyHealth == 0){
             enemy.SetActive(false);    
         }
-    }*/
+    }
 }

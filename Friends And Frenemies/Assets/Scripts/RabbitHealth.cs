@@ -17,11 +17,9 @@ public class RabbitHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentRabbitHealth.hurt == true){
-        //if(currentRabbitHealth.rH.rabbitHealth == 0){
+        if(currentRabbitHealth.rH.rabbitHealth == 0){
             blood.Play();
-        }
             //rabbit.SetActive(false);    
-        //}    
+        }    
     }
 }

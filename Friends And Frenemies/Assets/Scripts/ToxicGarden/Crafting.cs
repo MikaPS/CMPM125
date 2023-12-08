@@ -20,6 +20,8 @@ public class Crafting : MonoBehaviour
         {
             craftingManager = this;
             DontDestroyOnLoad(gameObject);
+            // openWindow();
+            closeWindow();
         }
         else
         {
@@ -62,8 +64,9 @@ public class Crafting : MonoBehaviour
     public void craft() {
         string right = rightItem.image.sprite.name;
         string left = leftItem.image.sprite.name;
-        
+        Debug.Log("in crafting");
         if (hasItems("gray" ,"yellowflower")) {
+            Debug.Log("here");
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.ToxicMushroom) && InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.badWater)) {
                 InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.darkestWater, 1);
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.ToxicMushroom);
@@ -120,30 +123,35 @@ public class Crafting : MonoBehaviour
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.badWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.badWater);
                 FoodBar.foodManager.UpdateFood(-10);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "brightblue") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.cleanWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.cleanWater);
                 FoodBar.foodManager.UpdateFood(5);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "darkblue") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.darkestWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.darkestWater);
                 FoodBar.foodManager.UpdateFood(5);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "bluegray") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.medWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.medWater);
                 FoodBar.foodManager.UpdateFood(-3);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         InventoryManager.inventoryManager.PrintInventory();
     }
 
     private bool hasItems(string left, string right) {
+        Debug.Log(leftItem.image.sprite.name);
         if (rightItem.image.sprite.name == left && leftItem.image.sprite.name == right || leftItem.image.sprite.name == left && rightItem.image.sprite.name == right) {
             return true;
         }
@@ -152,6 +160,10 @@ public class Crafting : MonoBehaviour
 
     public void closeWindow() {
         gameObject.SetActive(false);
+    }
+
+     public void openWindow() {
+        gameObject.SetActive(true);
     }
 
     public void toggleVisibility() {

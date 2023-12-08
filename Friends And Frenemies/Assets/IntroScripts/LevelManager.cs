@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public void NextScene() {
         if (SceneManager.GetActiveScene().buildIndex < totalScenes) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // Crafting.craftingManager.openWindow();
+            // Crafting.craftingManager.closeWindow();
         } else {
             LevelSelect();
         }
@@ -29,12 +31,20 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    // Moves to level 1
+    public void Level1() {
+        SceneManager.LoadScene(1);
+    }
     // Moves to level 2
     public void Level2() {
         SceneManager.LoadScene(2);
     }
-    // Moves to level 3
-    public void Level3() {
-        SceneManager.LoadScene(3);
+
+    public void playScenes() {
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
+            NextScene();
+        } else {
+            PrevScene();
+        }
     }
 }

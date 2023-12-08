@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFollower : MonoBehaviour
 {
+    public Animator animator;
     public GameObject player;
     public float speed;
     public float distanceBetween;
@@ -29,6 +30,7 @@ public class EnemyFollower : MonoBehaviour
         if(distance < distanceBetween){
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            animator.SetBool("follow", true);
         }
                     
     }
@@ -38,7 +40,22 @@ public class EnemyFollower : MonoBehaviour
         if(collision.collider.tag == "Player1" || collision.collider.tag == "Player2")
         //if(collision.gameObject.name == "pinksquare")
         {
+            animator.SetBool("attacking", true);
+            SoundEffects.AudioManager.playHit();
             playerHealth -= 5;
+            //Debug.Log("This is the player's health");
+            //Debug.Log(playerHealth);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player1" || collision.collider.tag == "Player2")
+        //if(collision.gameObject.name == "pinksquare")
+        {
+            animator.SetBool("attacking", false);
+            
+            //playerHealth -= 5;
             //Debug.Log("This is the player's health");
             //Debug.Log(playerHealth);
         }
