@@ -25,9 +25,25 @@ public class ShowAchivement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        findPlayer1();
+        findPlayer2();
     }
 
+    public void findPlayer1() {
+        GameObject player1Object = GameObject.FindWithTag("Player1");
+        if (player1Object != null)
+        {
+            player1 = player1Object.transform;
+        }
+    }
+
+    public void findPlayer2() {
+        GameObject player2Object = GameObject.FindWithTag("Player2");
+        if (player2Object != null)
+        {
+            player2 = player2Object.transform;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +51,8 @@ public class ShowAchivement : MonoBehaviour
     }
 
     public void showSprite1() {
-        Debug.Log("here");
+        findPlayer1();
+        // Debug.Log("here");
         Vector3 playerPosition = player1.position;
         Vector3 abovePlayerPosition = new Vector3(playerPosition.x, playerPosition.y + 5, 1);
         spriteRenderer1.transform.position = abovePlayerPosition;
@@ -44,6 +61,7 @@ public class ShowAchivement : MonoBehaviour
     }
 
     public void showSprite2() {
+        findPlayer2();
        Vector3 playerPosition = player2.position;
         Vector3 abovePlayerPosition = new Vector3(playerPosition.x, playerPosition.y + 5, 1);
         spriteRenderer2.transform.position = abovePlayerPosition;

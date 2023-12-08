@@ -64,8 +64,9 @@ public class Crafting : MonoBehaviour
     public void craft() {
         string right = rightItem.image.sprite.name;
         string left = leftItem.image.sprite.name;
-        
+        Debug.Log("in crafting");
         if (hasItems("gray" ,"yellowflower")) {
+            Debug.Log("here");
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.ToxicMushroom) && InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.badWater)) {
                 InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.darkestWater, 1);
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.ToxicMushroom);
@@ -150,6 +151,7 @@ public class Crafting : MonoBehaviour
     }
 
     private bool hasItems(string left, string right) {
+        Debug.Log(leftItem.image.sprite.name);
         if (rightItem.image.sprite.name == left && leftItem.image.sprite.name == right || leftItem.image.sprite.name == left && rightItem.image.sprite.name == right) {
             return true;
         }
