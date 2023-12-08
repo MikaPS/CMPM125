@@ -35,6 +35,7 @@ public class ShowAchivement : MonoBehaviour
     }
 
     public void showSprite1() {
+        Debug.Log("here");
         Vector3 playerPosition = player1.position;
         Vector3 abovePlayerPosition = new Vector3(playerPosition.x, playerPosition.y + 5, 1);
         spriteRenderer1.transform.position = abovePlayerPosition;

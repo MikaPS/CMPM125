@@ -41,6 +41,7 @@ public class EnemyFollower : MonoBehaviour
         //if(collision.gameObject.name == "pinksquare")
         {
             animator.SetBool("attacking", true);
+            SoundEffects.AudioManager.playHit();
             playerHealth -= 5;
             //Debug.Log("This is the player's health");
             //Debug.Log(playerHealth);

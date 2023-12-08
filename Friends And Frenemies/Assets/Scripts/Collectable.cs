@@ -16,15 +16,18 @@ public class Collectable : MonoBehaviour
                 // countText.text = "" + stoneCount;
                 InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.Stone, 1);
                 InventoryManager.inventoryManager.PrintInventory();
+                SoundEffects.AudioManager.playPickUp();
 
             } else if (tag == "Apple") {
                 InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.Apple, 1);
                 InventoryManager.inventoryManager.PrintInventory();
+                SoundEffects.AudioManager.playPickUp();
                 // FoodBar.foodManager.UpdateFood(5);
             }
              else {
                 InventoryManager.inventoryManager.AddResource(InventoryManager.ResourceType.Wood, 1);
                 InventoryManager.inventoryManager.PrintInventory();
+                SoundEffects.AudioManager.playPickUp();
                 // woodCount += 1;
                 // countText.text = "" + woodCount;
             }
