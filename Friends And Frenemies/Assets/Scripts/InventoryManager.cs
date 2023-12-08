@@ -95,7 +95,7 @@ public class InventoryManager : MonoBehaviour
         int count = 0;
         foreach (Resource resource in resources)
         {
-            if (texts.Length > 0) {
+            if (count < texts.Length) {
                 texts[count].text = "x " + resource.amount;
             }
             count += 1;
