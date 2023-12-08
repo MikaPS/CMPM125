@@ -5098,6 +5098,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2674443093319498743, guid: 53fa3da52bbf4cd448d3d438fae574f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5504995b846654a47b6079d27e9799f9, type: 3}
+    - target: {fileID: 3446845181984504716, guid: 53fa3da52bbf4cd448d3d438fae574f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fc29a0460419f641b5df6fd57fb19f4, type: 3}
     - target: {fileID: 4189131961715219520, guid: 53fa3da52bbf4cd448d3d438fae574f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5186,6 +5194,14 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8269022616058062476, guid: 53fa3da52bbf4cd448d3d438fae574f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d1aa3ed83b165409750185ed41a838, type: 3}
+    - target: {fileID: 9130541860326488519, guid: 53fa3da52bbf4cd448d3d438fae574f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00cfd4b8760be9447b68ab9a92672e60, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6402,6 +6418,14 @@ PrefabInstance:
     - target: {fileID: 1930632397072152950, guid: 3d52edad1e3ab004d886832e12207b1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497922494667489576, guid: 3d52edad1e3ab004d886832e12207b1d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497922494667489576, guid: 3d52edad1e3ab004d886832e12207b1d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.76
       objectReference: {fileID: 0}
     - target: {fileID: 3497922494667489576, guid: 3d52edad1e3ab004d886832e12207b1d, type: 3}
       propertyPath: m_IsTrigger
