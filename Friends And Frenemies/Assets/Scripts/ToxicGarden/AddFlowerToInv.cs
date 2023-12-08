@@ -24,7 +24,8 @@ public class AddFlowerToInv : MonoBehaviour
             SoundEffects.AudioManager.playPickUp();
             InventoryManager.inventoryManager.AddResource(objectToAdd, 1);
             InventoryManager.inventoryManager.PrintInventory();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
     }
 }
