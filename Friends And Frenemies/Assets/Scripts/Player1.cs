@@ -88,18 +88,33 @@ public class Player1 : MonoBehaviour
         transform.localScale = localScale;
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "enemy")
+        {
+            animator.SetBool("damaged", false);
+        }
+    }
+
      private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.name == "enemy")
+        {
+            animator.SetBool("damaged", true);
+        }
+        
         if(collision.gameObject.name == "enemy" && attack)
         //if(collision.gameObject.name == "pinksquare")
         {
+            
             Debug.Log("Enemy gonna get attacked homie");
             eH.enemyHealth -= 1;
             Debug.Log("Health of enemy:");
             Debug.Log(eH.enemyHealth);
 
         }
-
+        
+        
         if(collision.gameObject.name == "rabbit" && attack)
         {
             rH.rabbitHealth -= 1;
