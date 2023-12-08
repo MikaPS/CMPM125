@@ -98,7 +98,7 @@ public class Player1 : MonoBehaviour
 
      private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "enemy")
+        /*if(collision.gameObject.name == "enemy")
         {
             animator.SetBool("damaged", true);
         }
@@ -112,7 +112,7 @@ public class Player1 : MonoBehaviour
             Debug.Log("Health of enemy:");
             Debug.Log(eH.enemyHealth);
 
-        }
+        }*/
         
         
         if(collision.gameObject.name == "rabbit" && attack)

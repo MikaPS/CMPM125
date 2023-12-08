@@ -20,6 +20,8 @@ public class EnemyDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Player"){
             playerHealth.TakeDamage(10);
+            Debug.Log("This is the player's health:");
+            Debug.Log(playerHealth.health);
         }
     }
 }
