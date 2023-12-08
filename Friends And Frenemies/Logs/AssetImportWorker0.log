@@ -2179,3 +2179,51 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 33229.867475 seconds.
+  path: Assets/Scenes/SampleScene 1.unity
+  artifactKey: Guid(4c4ee08cd89621942ba65e6990098284) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene 1.unity using Guid(4c4ee08cd89621942ba65e6990098284) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88efd873439f3061d8d41e730ef4e7c4') in 0.003244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.463943 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeadc111d33a4658a08807c60bfac398') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.579553 seconds.
+  path: Assets/Scenes/Garden JSTN.unity
+  artifactKey: Guid(320f8e30fa842c24493634b3a46290a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Garden JSTN.unity using Guid(320f8e30fa842c24493634b3a46290a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab1d383d118093f7acdb7b8ed64c574') in 0.000460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1125.004949 seconds.
+  path: Assets/Scenes/Garden.unity
+  artifactKey: Guid(ba8bfb326905e4ad4b24179242b8487d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Garden.unity using Guid(ba8bfb326905e4ad4b24179242b8487d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bd5693a6e0c0cbba3f89303fbcdfe8') in 0.001034 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 67.114105 seconds.
+  path: Assets/Scenes/Tristyn 1.unity
+  artifactKey: Guid(42c887d9c46dfc04bae87a978b653e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tristyn 1.unity using Guid(42c887d9c46dfc04bae87a978b653e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c83e31b4b3f2b2083848b6712aa7b76d') in 0.000785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 17.428158 seconds.
+  path: Assets/Scenes/Tristyn JSTN.unity
+  artifactKey: Guid(42c887d9c46dfc04bae87a978b653e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tristyn JSTN.unity using Guid(42c887d9c46dfc04bae87a978b653e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edcb42f6c4ff85d4c1744d237aba9ff5') in 0.000850 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
