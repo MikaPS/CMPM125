@@ -951,3 +951,19 @@ Received Import Request.
 Start importing Assets/Prefabs using Guid(0cbb05dcffc9d4c658917f7966735d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '972812d401762a2592da9ef4fc47ee0d') in 0.006510 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 634.886768 seconds.
+  path: Assets/apple.png
+  artifactKey: Guid(53437406693ccd34aa23b7de3a856044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/apple.png using Guid(53437406693ccd34aa23b7de3a856044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bf817b8dbe9e30a20d5400c87d7b4eb') in 0.275832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/wood.png
+  artifactKey: Guid(67134b5345cc4db45ac0926400799358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/wood.png using Guid(67134b5345cc4db45ac0926400799358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26cae5e15a0ce92d855f7c4d5dcbb750') in 0.067083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
