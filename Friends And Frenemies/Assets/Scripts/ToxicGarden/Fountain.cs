@@ -44,6 +44,7 @@ public class Fountain : MonoBehaviour
                 // reduce health
             } 
             else {
+                SoundEffects.AudioManager.playRunningWater();
                 TextNextToPlayer.textEffects.updateSprite(currentPlayer, waterUp);
                 InventoryManager.ResourceType objectToAdd = InventoryManager.ResourceType.badWater;
                 InventoryManager.inventoryManager.AddResource(objectToAdd, 1);

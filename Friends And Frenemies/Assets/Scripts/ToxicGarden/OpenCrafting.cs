@@ -14,7 +14,7 @@ public class OpenCrafting : MonoBehaviour
         {
             // Get the Canvas component from the found GameObject
             crafting = canvasObject.GetComponent<Canvas>();
-                    crafting.gameObject.SetActive(false);
+            crafting.gameObject.SetActive(false);
 
         }
     }

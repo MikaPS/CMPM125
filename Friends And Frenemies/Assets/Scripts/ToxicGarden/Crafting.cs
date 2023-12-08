@@ -20,6 +20,8 @@ public class Crafting : MonoBehaviour
         {
             craftingManager = this;
             DontDestroyOnLoad(gameObject);
+            // openWindow();
+            closeWindow();
         }
         else
         {
@@ -120,24 +122,28 @@ public class Crafting : MonoBehaviour
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.badWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.badWater);
                 FoodBar.foodManager.UpdateFood(-10);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "brightblue") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.cleanWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.cleanWater);
                 FoodBar.foodManager.UpdateFood(5);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "darkblue") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.darkestWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.darkestWater);
                 FoodBar.foodManager.UpdateFood(5);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         else if (food == "bluegray") {
             if (InventoryManager.inventoryManager.hasResource(InventoryManager.ResourceType.medWater)) {
                 InventoryManager.inventoryManager.useResource(InventoryManager.ResourceType.medWater);
                 FoodBar.foodManager.UpdateFood(-3);
+                SoundEffects.AudioManager.playDrinkWater();
             }
         }
         InventoryManager.inventoryManager.PrintInventory();
@@ -152,6 +158,10 @@ public class Crafting : MonoBehaviour
 
     public void closeWindow() {
         gameObject.SetActive(false);
+    }
+
+     public void openWindow() {
+        gameObject.SetActive(true);
     }
 
     public void toggleVisibility() {

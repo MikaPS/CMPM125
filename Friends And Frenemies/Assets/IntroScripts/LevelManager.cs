@@ -37,4 +37,12 @@ public class LevelManager : MonoBehaviour
     public void Level3() {
         SceneManager.LoadScene(3);
     }
+
+    public void playScenes() {
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
+            NextScene();
+        } else {
+            PrevScene();
+        }
+    }
 }
