@@ -6,20 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class OnDeath : MonoBehaviour
 {
-    public PlayerHealth deadOrAlive;
-    //private HealthManager healthManager;
+    private PlayerHealth health;
     private FoodBar food;
+    private HealthManager hM;
+    private bool switched = false;
     void Start()
     {
-        //healthManager = FindObjectOfType<HealthManager>();    
+        health = FindObjectOfType<PlayerHealth>();    
         food = FindObjectOfType<FoodBar>();  
+        hM = FindObjectOfType<HealthManager>();  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(deadOrAlive.dead == true || food.foodSlider.value <= 0){
-            SceneManager.LoadScene("Death");
+        if(health.health <= 0 || food.foodSlider.value <= 0){
+            if(!switched){
+                Debug.Log("called");
+                //Destroy(hM);
+                switched = true;
+                SceneManager.LoadScene("Death");
+            }
         }
     }
 }

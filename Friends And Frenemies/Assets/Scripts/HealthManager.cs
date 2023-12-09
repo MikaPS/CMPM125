@@ -32,21 +32,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("This is the player's health:");
-        //Debug.Log(pH.health);
         healthBar.fillAmount = pH.health /100f;
-        
-        
-        
-        
-        //}
-
-        /*if(Input.GetKeyDown(KeyCode.Y))
-        {
-            healthAmount += 5;
-            healthAmount = Mathf.Clamp(healthAmount, 0, 100);
-            healthBar.fillAmount = healthAmount / 100f;
-        }*/
     }
 
     
