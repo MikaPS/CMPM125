@@ -46,7 +46,7 @@ public class FoodBar : MonoBehaviour
 
     public IEnumerator UpdateFoodBackground()
     {
-        while (foodSlider.value - decreaseAmount >= 0)
+        while (foodSlider.value - decreaseAmount > 0)
         {
             UpdateFood(-decreaseAmount);
             yield return new WaitForSeconds(1.0f);
