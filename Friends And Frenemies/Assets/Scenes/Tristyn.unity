@@ -4212,6 +4212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400058793}
   - component: {fileID: 1400058792}
+  - component: {fileID: 1400058794}
   m_Layer: 0
   m_Name: HealthManager
   m_TagString: Untagged
@@ -4248,6 +4249,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1400058794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400058791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c29c98e269353647be061c9020b3af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadOrAlive: {fileID: 5030350419221072618}
 --- !u!1 &1426196223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,6 +6592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 100
+  dead: 0
 --- !u!1001 &7138347115662390842
 PrefabInstance:
   m_ObjectHideFlags: 0

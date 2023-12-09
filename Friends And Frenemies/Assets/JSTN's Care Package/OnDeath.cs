@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class OnDeath : MonoBehaviour
 {
-    public PlayerHealth pH;
+    public PlayerHealth deadOrAlive;
     //private HealthManager healthManager;
     private FoodBar food;
     void Start()
@@ -18,7 +18,7 @@ public class OnDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pH.health < 0 || food.foodSlider.value <= 0){
+        if(deadOrAlive.dead == true || food.foodSlider.value <= 0){
             SceneManager.LoadScene("Death");
         }
     }

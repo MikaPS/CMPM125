@@ -6,12 +6,14 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int health;
-    public int maxHealth = 100;  
+    public int maxHealth = 100;
+    public bool dead;  
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;      
+        health = maxHealth;
+        dead = false;      
     }
 
     void Update(){
@@ -21,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount){
         health -= amount;
         if(health <= 0){
-            Debug.Log("Forereal game is fucking over");
+            dead = true;
         }
     }
 }
