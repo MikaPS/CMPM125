@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     public Image healthBar;
     public PlayerHealth pH;
     public static HealthManager healthManager;
-private bool switched = false;
+    private bool switched = false;
      void Awake()
     {
         if (healthManager == null)
@@ -41,7 +41,7 @@ private bool switched = false;
             if(pH.health <= 0){
                 if(!switched){
                     // Debug.Log("called");
-                    //Destroy(hM);
+                    Destroy(gameObject);
                     switched = true;
                     SceneManager.LoadScene("Death");
                 }
