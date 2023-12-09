@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     public void playScenes() {
         if (SceneManager.GetActiveScene().buildIndex == 1) {
             NextScene();
-        } else {
+        } else if (SceneManager.GetActiveScene().buildIndex == 2) {
             PrevScene();
         }
     }

@@ -39,6 +39,7 @@ public class OnDeath : MonoBehaviour
                 // Debug.Log("called");
                 //Destroy(hM);
                 switched = true;
+                food.gameObject.SetActive(false);
                 SceneManager.LoadScene("Death");
             }
         }

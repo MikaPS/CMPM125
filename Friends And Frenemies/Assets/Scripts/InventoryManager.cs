@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class InventoryManager : MonoBehaviour
@@ -102,10 +103,13 @@ public class InventoryManager : MonoBehaviour
         }
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals, 1) == 2) {
             winText.text = "PLAYER 1 WON!!";
-
-            }
+            // GameObject persistedObject = GameObject.Find("HealthManager"); Destroy(persistedObject);
+            SceneManager.LoadScene("Win");
+        }
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals, 2) == 2) {
             winText.text = "PLAYER 2 WON!!";
+            // GameObject persistedObject = GameObject.Find("HealthManager");  Destroy(persistedObject);
+            SceneManager.LoadScene("Win");
         }
         
     }
@@ -127,4 +131,5 @@ public class InventoryManager : MonoBehaviour
         Resource existingResource = resources.Find(r => r.type == t);
         return existingResource.amount;
     }
+
 }

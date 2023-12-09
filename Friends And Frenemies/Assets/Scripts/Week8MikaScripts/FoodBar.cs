@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class FoodBar : MonoBehaviour
@@ -46,7 +47,7 @@ public class FoodBar : MonoBehaviour
     public IEnumerator UpdateFoodBackground()
     {
         // while (foodSlider.value - decreaseAmount > 0)
-        while (foodSlider.value>0)
+        while (foodSlider.value>0 && (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2))
         {
             UpdateFood(-decreaseAmount);
             yield return new WaitForSeconds(1.0f);

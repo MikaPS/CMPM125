@@ -26077,6 +26077,8 @@ MonoBehaviour:
   speed: 0
   Attack: 0
   attack: 0
+  rH: {fileID: 0}
+  enemyHealth: {fileID: 0}
   blood: {fileID: 0}
 --- !u!61 &542535205
 BoxCollider2D:
@@ -41518,7 +41520,7 @@ GameObject:
   - component: {fileID: 790135271}
   m_Layer: 0
   m_Name: TwoEffect
-  m_TagString: Untagged
+  m_TagString: destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

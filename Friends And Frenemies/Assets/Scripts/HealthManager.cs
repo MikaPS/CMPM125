@@ -35,13 +35,16 @@ private bool switched = false;
         if (SceneManager.GetActiveScene().buildIndex != 3) {
             pH = GameObject.FindObjectOfType<PlayerHealth>();
         }
-        healthBar.fillAmount = pH.health /100f;
-       if(pH.health <= 0){
-            if(!switched){
-                // Debug.Log("called");
-                //Destroy(hM);
-                switched = true;
-                SceneManager.LoadScene("Death");
+        
+        if (SceneManager.GetActiveScene().buildIndex < 3) {
+            healthBar.fillAmount = pH.health /100f;
+            if(pH.health <= 0){
+                if(!switched){
+                    // Debug.Log("called");
+                    //Destroy(hM);
+                    switched = true;
+                    SceneManager.LoadScene("Death");
+                }
             }
         }
     }    
