@@ -10,6 +10,8 @@ public class ToxicMushrooms : MonoBehaviour
     public int dmg = 4;
     private float timeSinceLastChange;
 
+    public PlayerHealth ph;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +33,10 @@ public class ToxicMushrooms : MonoBehaviour
     {
         if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
-            Debug.Log("taking damage :(");
-            // Reduce player's health
+            //Debug.Log("Player Health Before");
+            //Debug.Log(ph.health);
+            ph.TakeDamage(1);
+            //Debug.Log(ph.health);
         }
     }
 }
