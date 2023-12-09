@@ -22,7 +22,7 @@ public class OnDeath : MonoBehaviour
     {
         if(health.health <= 0 || food.foodSlider.value <= 0){
             if(!switched){
-                Debug.Log("called");
+                // Debug.Log("called");
                 //Destroy(hM);
                 switched = true;
                 SceneManager.LoadScene("Death");

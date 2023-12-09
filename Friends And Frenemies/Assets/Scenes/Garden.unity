@@ -5781,6 +5781,7 @@ GameObject:
   - component: {fileID: 385031591}
   - component: {fileID: 385031594}
   - component: {fileID: 385031595}
+  - component: {fileID: 385031596}
   m_Layer: 0
   m_Name: ToxicMushParticles
   m_TagString: Untagged
@@ -10636,6 +10637,19 @@ MonoBehaviour:
   windChangeTime: 3
   dmg: 4
   ph: {fileID: 1567607490}
+--- !u!114 &385031596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385031589}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4718025b995fc4b2d8450d54400b62ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1567607490}
 --- !u!1 &411135256
 GameObject:
   m_ObjectHideFlags: 0
@@ -41380,6 +41394,7 @@ MonoBehaviour:
   speedDown: {fileID: 21300000, guid: 073fa41297811ad43afd9cad3f9025cd, type: 3}
   healthDown: {fileID: 21300000, guid: 99088c05084cb7f4393100c256fccdfc, type: 3}
   waterUp: {fileID: 21300000, guid: 3139260e6e74c4849ab3df71dec5521c, type: 3}
+  ph: {fileID: 1567607490}
 --- !u!50 &765925877
 Rigidbody2D:
   serializedVersion: 4
@@ -47727,7 +47742,6 @@ RectTransform:
   - {fileID: 62969320}
   - {fileID: 8283949}
   - {fileID: 997896011}
-  - {fileID: 1566909359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -48300,7 +48314,7 @@ Transform:
   m_GameObject: {fileID: 1566909358}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -397.6142, y: -323.3541, z: -0.5343325}
+  m_LocalPosition: {x: 9.385803, y: -56.354095, z: -0.5343325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48316,7 +48330,7 @@ Transform:
   - {fileID: 1234050038}
   - {fileID: 2018758749}
   - {fileID: 913709303}
-  m_Father: {fileID: 1343076796}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1567607488
 PrefabInstance:
@@ -73952,6 +73966,7 @@ SceneRoots:
   - {fileID: 95541190}
   - {fileID: 1865363091}
   - {fileID: 1343076796}
+  - {fileID: 1566909359}
   - {fileID: 1121798860}
   - {fileID: 790135272}
   - {fileID: 781698211}

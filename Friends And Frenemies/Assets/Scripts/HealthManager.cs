@@ -26,16 +26,13 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("Before" + pH.health);
-        healthBar.fillAmount = pH.health /100f;
-        Debug.Log("After" + pH.health);
+        pH = GameObject.FindObjectOfType<PlayerHealth>();
     }
 
     
+    void Update()
+    {
+        pH = GameObject.FindObjectOfType<PlayerHealth>();
+        healthBar.fillAmount = pH.health /100f;
+    }    
 }

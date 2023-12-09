@@ -9,6 +9,8 @@ public class Fountain : MonoBehaviour
     public Sprite healthDown;
     public Sprite waterUp;
 
+    public PlayerHealth ph;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class Fountain : MonoBehaviour
             } 
             else if (rand == 3) {
                 TextNextToPlayer.textEffects.updateSprite(currentPlayer, healthDown);
+                ph.TakeDamage(3);
                 // reduce health
             } 
             else {

@@ -29,14 +29,10 @@ public class ToxicMushrooms : MonoBehaviour
     }
 
     void OnParticleCollision(GameObject other)
-
     {
         if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
-            //Debug.Log("Player Health Before");
-            //Debug.Log(ph.health);
             ph.TakeDamage(1);
-            //Debug.Log(ph.health);
         }
     }
 }

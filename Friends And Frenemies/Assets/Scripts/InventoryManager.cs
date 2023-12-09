@@ -102,6 +102,7 @@ public class InventoryManager : MonoBehaviour
         }
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player1Goals, 1) == 2) {
             winText.text = "PLAYER 1 WON!!";
+
             }
         if (GoalsManager.GoalManager.CheckPlayerGoals(GoalsManager.GoalManager.player2Goals, 2) == 2) {
             winText.text = "PLAYER 2 WON!!";

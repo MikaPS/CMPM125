@@ -10,7 +10,6 @@ public class FoodBar : MonoBehaviour
 
     public Slider foodSlider;
     public float decreaseAmount = 2.0f;
-    
 
     void Awake()
     {
