@@ -10,6 +10,20 @@ public class OnDeath : MonoBehaviour
     private FoodBar food;
     private HealthManager hM;
     private bool switched = false;
+
+    public static OnDeath deathManager;
+     void Awake()
+    {
+        if (deathManager == null)
+        {
+            deathManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         health = FindObjectOfType<PlayerHealth>();    

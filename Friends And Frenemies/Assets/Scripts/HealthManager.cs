@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     public Image healthBar;
     public PlayerHealth pH;
     public static HealthManager healthManager;
-
+private bool switched = false;
      void Awake()
     {
         if (healthManager == null)
@@ -33,8 +33,16 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex != 3) {
-        pH = GameObject.FindObjectOfType<PlayerHealth>();
+            pH = GameObject.FindObjectOfType<PlayerHealth>();
         }
         healthBar.fillAmount = pH.health /100f;
+       if(pH.health <= 0){
+            if(!switched){
+                // Debug.Log("called");
+                //Destroy(hM);
+                switched = true;
+                SceneManager.LoadScene("Death");
+            }
+        }
     }    
 }
