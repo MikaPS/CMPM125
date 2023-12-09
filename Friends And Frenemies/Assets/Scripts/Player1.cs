@@ -16,7 +16,9 @@ public class Player1 : MonoBehaviour
     public bool attack;
 
     //public EnemyHealth eH;
-    //public RabbitHealth rH;
+    public RabbitHealth rH;
+    public EnemyHealth enemyHealth;
+
 
     private bool isFacingRight;
     private float Move;
@@ -69,7 +71,7 @@ public class Player1 : MonoBehaviour
             animator.SetBool("attacking", true);
         } else
         {
-            attack = false;
+            //attack = false;
             animator.SetBool("attacking", false);
         }
 
@@ -90,6 +92,12 @@ public class Player1 : MonoBehaviour
         transform.localScale = localScale;
     }
 
+    private void OnCollisionStay2D(Collision2D collision){
+        if(collision.gameObject.name == "rabbit" && attack)
+        {
+            blood.Play();
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name == "enemy")
@@ -100,28 +108,27 @@ public class Player1 : MonoBehaviour
 
      private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "rabbit" && attack)
-        {
-            //if(rH.rabbitHealth != 0){
-            //rH.rabbitHealth -= 1;
-            blood.Play();
-            //Debug.Log("Attacking rabbit");
-            //}
-            //Rabbit health go down
-        }
-        /*if(collision.gameObject.name == "enemy")
+        //if(collision.gameObject.name == "rabbit" && attack)
+        //{
+        //    blood.Play();
+        //}
+        if(collision.gameObject.name == "enemy" && attack)
         {
             animator.SetBool("damaged", true);
+            enemyHealth.EnemyTakeDamage(1);
+
+
         }
         
-        if(collision.gameObject.name == "enemy" && attack)
+        /*if(collision.gameObject.name == "enemy")
         //if(collision.gameObject.name == "pinksquare")
         {
-            
-            Debug.Log("Enemy gonna get attacked homie");
-            eH.enemyHealth -= 1;
-            Debug.Log("Health of enemy:");
-            Debug.Log(eH.enemyHealth);
+            enemyHealth.EnemyTakeDamage(1);
+            Debug.Log("INJURED ENEMY");
+            //Debug.Log("Enemy gonna get attacked homie");
+            //eH.enemyHealth -= 1;
+            //Debug.Log("Health of enemy:");
+            //Debug.Log(eH.enemyHealth);
 
         }*/
         
