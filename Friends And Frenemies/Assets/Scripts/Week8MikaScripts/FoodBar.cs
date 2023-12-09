@@ -38,15 +38,15 @@ public class FoodBar : MonoBehaviour
 
     public void UpdateFood(float val)
     {
-        if (foodSlider.value + val >= 0)
-        {
-            foodSlider.value += val;
+        if (foodSlider.value >= 0) {
+        foodSlider.value += val;
         }
     }
 
     public IEnumerator UpdateFoodBackground()
     {
-        while (foodSlider.value - decreaseAmount > 0)
+        // while (foodSlider.value - decreaseAmount > 0)
+        while (foodSlider.value>0)
         {
             UpdateFood(-decreaseAmount);
             yield return new WaitForSeconds(1.0f);

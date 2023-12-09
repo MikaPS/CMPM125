@@ -32,7 +32,9 @@ public class HealthManager : MonoBehaviour
     
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex != 3) {
         pH = GameObject.FindObjectOfType<PlayerHealth>();
+        }
         healthBar.fillAmount = pH.health /100f;
     }    
 }
