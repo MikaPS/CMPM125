@@ -15,11 +15,13 @@ public class Player1 : MonoBehaviour
     public KeyCode Attack;
     public bool attack;
 
-    public EnemyHealth eH;
-    public RabbitHealth rH;
+    //public EnemyHealth eH;
+    //public RabbitHealth rH;
 
     private bool isFacingRight;
     private float Move;
+
+    public ParticleSystem blood;
 
     void Start()
     {
@@ -98,6 +100,15 @@ public class Player1 : MonoBehaviour
 
      private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.name == "rabbit" && attack)
+        {
+            //if(rH.rabbitHealth != 0){
+            //rH.rabbitHealth -= 1;
+            blood.Play();
+            //Debug.Log("Attacking rabbit");
+            //}
+            //Rabbit health go down
+        }
         /*if(collision.gameObject.name == "enemy")
         {
             animator.SetBool("damaged", true);
@@ -115,11 +126,6 @@ public class Player1 : MonoBehaviour
         }*/
         
         
-        if(collision.gameObject.name == "rabbit" && attack)
-        {
-            rH.rabbitHealth -= 1;
-            Debug.Log("Attacking rabbit");
-            //Rabbit health go down
-        }
+       
     }
 }

@@ -18,10 +18,11 @@ public class EnemyDamage : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag == "Player"){
+        if(collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2"){
+            Debug.Log("Enemy attacks players");
             playerHealth.TakeDamage(10);
-            Debug.Log("This is the player's health:");
-            Debug.Log(playerHealth.health);
+            //Debug.Log("This is the player's health:");
+            //Debug.Log(playerHealth.health);
         }
     }
 }

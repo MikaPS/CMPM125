@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RabbitHealth : MonoBehaviour
 {
-    public int rabbitHealth;
+    /*public int rabbitHealth;
     public Player1 currentRabbitHealth;
     public GameObject rabbit;
     public ParticleSystem blood;
@@ -21,5 +21,5 @@ public class RabbitHealth : MonoBehaviour
             blood.Play();
             //rabbit.SetActive(false);    
         }    
-    }
+    }*/
 }

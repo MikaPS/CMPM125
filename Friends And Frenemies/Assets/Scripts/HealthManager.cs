@@ -22,8 +22,7 @@ public class HealthManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    //public EnemyFollower healthAmount;
-    //public float healthAmount = 100f;
+    
     // Start is called before the first frame update
     void Start()
     {
